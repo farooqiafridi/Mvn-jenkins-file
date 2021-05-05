@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('cloning') {
+            steps {
+                git 'https://github.com/farooqiafridi/sample-mvn-for-test-verify-clean-compile.git'
+                
+            }
+        }
+    
+        stage('mvn test') {
+            steps {
+                dir('/var/lib/jenkins/workspace/pipline -mvn/my-app') {
+                    sh 'mvn test'
+                }
+                
+                
+            }
+        }
+    }    
+}
+   
